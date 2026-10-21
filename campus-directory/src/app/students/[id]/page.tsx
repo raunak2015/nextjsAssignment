@@ -7,6 +7,12 @@ type StudentProfileProps = {
   params: Promise<{ id: string }>;
 };
 
+export function generateStaticParams() {
+  return students.map((student) => ({
+    id: student.id,
+  }));
+}
+
 export default async function StudentProfile({
   params,
 }: StudentProfileProps) {
